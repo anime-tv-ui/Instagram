@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Expired</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Background */
+    body, html {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: url('https://via.placeholder.com/400') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Centered Image */
+    .main-image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-image img {
+      max-width: 60%;
+      height: auto;
+    }
+
+    /* Bottom Image Fixed to Bottom */
+    .bottom-image {
+      position: fixed;
+      bottom: 20px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .bottom-image img {
+      max-width: 15%;
+      height: auto;
+    }
+
+    /* Blur Effect */
+    .background-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Session Expired Box */
+    .session-expired-box {
+      width: 80%;
+      max-width: 300px;
+      background-color: #000;
+      color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .session-expired-box h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .session-expired-box p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Button */
+    .login-button {
+      background-color: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Image in the Center -->
+  <div class="main-image">
+    <img src="content://media/external/images/media/1000159269" alt="Main Image">
+  </div>
+
+  <!-- Bottom Image -->
+  <div class="bottom-image">
+    <img src="content://media/external/images/media/1000159270" alt="Bottom Image">
+  </div>
+
+  <!-- Session Expired Popup -->
+  <div id="session-expired-popup" class="background-blur" style="display: none;">
+    <div class="session-expired-box">
+      <h2>Session Expired</h2>
+      <p>Your session has expired. Please log in again to continue.</p>
+      <button class="login-button" onclick="reLogin()">Log In</button>
+    </div>
+  </div>
+
+  <script>
+    // Display the session expired popup after 5 seconds
+    setTimeout(() => {
+      document.getElementById("session-expired-popup").style.display = "flex";
+    }, 5000);
+
+    // Redirect function
+    function reLogin() {
+      window.location.href="index2.html"
+    }
+  </script>
+</body>
+</html>
+body>
+</html>
